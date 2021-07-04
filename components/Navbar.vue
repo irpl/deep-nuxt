@@ -9,7 +9,7 @@
       </router-link>
       <div class="navs">
         <router-link to="/"
-          ><div class="nav-btn" :class="{ active: currentRoute === 'about' }">
+          ><div class="nav-btn" :class="{ active: currentRoute === 'index' }">
             about
           </div></router-link
         >
