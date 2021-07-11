@@ -7,6 +7,9 @@
 </template>
 
 <script>
+// import fs from "fs";
+// import matter from "gray-matter";
+
 export default {
   data() {
     return {
@@ -15,6 +18,7 @@ export default {
       projects: ""
     };
   },
+
   async fetch() {
     this.about = await fetch("https://admin.philliplogan.com/about").then(res =>
       res.json()

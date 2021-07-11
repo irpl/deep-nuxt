@@ -58,7 +58,11 @@
 import marked from "marked";
 
 export default {
-  props: ["works", "about"],
+  // props: ["works", "about"],
+  async asyncData({ $content, params }) {
+    const article = await $content("work", params.position).fetch();
+    return { article };
+  },
   methods: {
     mark(md) {
       return md ? marked(md) : "";
