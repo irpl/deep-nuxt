@@ -1,38 +1,12 @@
 <template>
   <div>
     <Navbar />
-    <!-- <div>{{ about }}</div> -->
-    <NuxtChild :works="works" :projects="projects" :about="about" />
+    <NuxtChild />
   </div>
 </template>
 
 <script>
-// import fs from "fs";
-// import matter from "gray-matter";
-
-export default {
-  data() {
-    return {
-      about: "",
-      works: "",
-      projects: ""
-    };
-  },
-
-  async fetch() {
-    this.about = await fetch("https://admin.philliplogan.com/about").then(res =>
-      res.json()
-    );
-
-    this.works = await fetch("https://admin.philliplogan.com/works")
-      .then(res => res.json())
-      .then(res => res.sort((a, b) => a.order - b.order));
-
-    this.projects = await fetch("https://admin.philliplogan.com/projects")
-      .then(res => res.json())
-      .then(res => res.sort((a, b) => a.order - b.order));
-  }
-};
+export default {};
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");

@@ -2,8 +2,7 @@
   <main>
     <section class="container">
       <div v-if="about" class="deep">
-        <h1>{{ about.title }}</h1>
-        <div v-html="mark(about.body)"></div>
+        <nuxt-content :document="about" />
       </div>
 
       <div class="deep">
@@ -18,7 +17,7 @@
             <span class="doop-duration">{{ work.duration }}</span>
           </div>
           <div class="doop-where">{{ work.where }}</div>
-          <div class="doop-body" v-html="mark(work.description)"></div>
+          <nuxt-content class="doop-body" :document="work" />
         </div>
       </div>
 
@@ -55,13 +54,14 @@
 </template>
 
 <script>
-import marked from "marked";
-
 export default {
-  // props: ["works", "about"],
   async asyncData({ $content, params }) {
-    const article = await $content("work", params.position).fetch();
-    return { article };
+    const about = await $content("about").fetch();
+    const works = await $content("work").fetch();
+    return {
+      about,
+      works
+    };
   },
   methods: {
     mark(md) {
