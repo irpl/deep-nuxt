@@ -1,6 +1,6 @@
 ---
 position: Product Roll-out and Support Engineer
-duration: Early 2019 - Mid 2020
+duration: Early 2019 - Present
 where: Digicel Group
 ---
 
