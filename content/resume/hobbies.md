@@ -1,3 +1,3 @@
 - Lots and lots of Youtube
-- Teaching Maths, Physics and programming
+- Teaching Mathematics, Physics and Programming
 - Badminton
