@@ -4,7 +4,7 @@
       <router-link to="/">
         <div class="logo">
           <div class="nav-title">phillip logan</div>
-          <div class="nav-subtitle">something</div>
+          <div class="nav-subtitle">builder, maker & teacher</div>
         </div>
       </router-link>
       <div class="navs">
