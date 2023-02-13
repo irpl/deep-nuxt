@@ -1,5 +1,5 @@
 ---
-position: Product Roll-out and Support Engineer
+position: Ops Engineer
 duration: Early 2019 - Present
 where: Digicel Group
 ---
