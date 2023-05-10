@@ -1,6 +1,6 @@
 ---
 position: Ops Engineer
-duration: Early 2019 - Present
+duration: Early 2019 - Mid 2023
 where: Digicel Group
 ---
 
