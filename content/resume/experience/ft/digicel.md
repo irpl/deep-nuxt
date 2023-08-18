@@ -1,7 +1,7 @@
 ---
 position: Operations Engineer
 where: Digicel Group
-duration: 2019 - Present
+duration: Jan 2019 - Apr 2023
 ---
 
 - Maintain the company's back-end systems and services.

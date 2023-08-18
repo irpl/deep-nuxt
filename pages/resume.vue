@@ -40,16 +40,24 @@
               :body="pt"
             />
           </div>
-          <h2><font-awesome-icon icon="fa-solid fa-school" /> Education</h2>
-          <ResumeBlock
-            :duration="edu.duration"
-            :where="edu.where"
-            :position="edu.position"
-            :body="edu"
-          />
-          <h2><font-awesome-icon icon="fa-solid fa-puzzle-piece" /> Hobbies</h2>
-          <div v-if="hobbies" class="">
-            <nuxt-content :document="hobbies" />
+          <div class="bottom-block">
+            <div class="bottom-block-item">
+              <h2><font-awesome-icon icon="fa-solid fa-school" /> Education</h2>
+              <ResumeBlock
+                :duration="edu.duration"
+                :where="edu.where"
+                :position="edu.position"
+                :body="edu"
+              />
+            </div>
+            <div class="bottom-block-item">
+              <h2>
+                <font-awesome-icon icon="fa-solid fa-puzzle-piece" /> Hobbies
+              </h2>
+              <div v-if="hobbies" class="">
+                <nuxt-content :document="hobbies" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -90,5 +98,12 @@ export default {
 .resume-container {
   margin: 0 auto;
   width: 90%;
+}
+.bottom-block {
+  display: flex;
+  margin-top: 50px;
+}
+.bottom-block-item {
+  width: 50%;
 }
 </style>
