@@ -1,5 +1,5 @@
 ---
-position: Lecturer
+position: Assistant Lecturer
 where: University of the West Indies, Mona
 duration: 2018 - Present
 ---
