@@ -1,6 +1,6 @@
 ---
 position: Developer/Analyst
-duration: Mid 2023 - Min 2025
+duration: Mid 2023 - Mid 2025
 where: National Commercial Bank Jamaica LTD.
 ---
 
