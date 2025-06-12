@@ -31,6 +31,8 @@
               :body="ft"
             />
           </div>
+          <br />
+          <br />
           <h2><font-awesome-icon icon="fa-solid fa-briefcase" /> Part time</h2>
           <div v-for="(pt, index) in pts" :key="'pt-' + index">
             <ResumeBlock
