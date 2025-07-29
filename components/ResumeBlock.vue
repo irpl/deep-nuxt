@@ -1,11 +1,12 @@
 <template>
   <div class="resume-exp-table">
-    <div class="resume-exp-table-duration">
+    <!-- <div class="resume-exp-table-duration">
       <span class="">{{ duration }}</span>
-    </div>
+    </div> -->
     <div class="resume-exp-table-body">
-      <span class="resume-exp-table-position">{{ position }}</span>
-      <div class="">{{ where }}</div>
+      <span class="resume-exp-table-position"> - {{ position }}</span>
+      <!-- <span class="">{{ duration }}</span> -->
+      <div class="">{{ where + " | " + duration }}</div>
       <nuxt-content class="" :document="body" />
     </div>
   </div>
@@ -17,13 +18,23 @@ export default {
 };
 </script>
 <style>
-.resume-blurb-table {
+.resume-banner {
   display: flex;
-  flex-wrap: wrap;
-  margin: 20px 0;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  div {
+    h1 {
+      margin-bottom: 0;
+    }
+  }
+}
+.resume-blurb-table {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* margin: 20px 0; */
 }
 .resume-blurb-table-item {
-  width: 400px;
+  /* width: 400px; */
   margin-bottom: 10px;
 }
 .resume-exp-table {
@@ -48,7 +59,7 @@ export default {
   font-weight: 700;
 }
 .resume-exp-table-body {
-  width: 600px;
+  /* width: 600px; */
   /* max-width: 100%; */
 }
 .resume-exp-table-body ul {

@@ -1,3 +1,4 @@
-- Lots and lots of Youtube
-- Teaching Mathematics, Physics and Programming
+- Lots and lots of Youtube and Twitch
+- Teaching Mathematics, Physics, Electronics, and Programming
 - Badminton
+- Running
