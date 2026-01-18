@@ -91,4 +91,9 @@ a {
     display: block;
   }
 }
+@media print {
+  .navbar {
+    display: none;
+  }
+}
 </style>

@@ -109,4 +109,16 @@ export default {
 .bottom-block-item {
   width: 50%;
 }
+@media print {
+  .resume-blurb-table-item {
+    width: unset
+  }
+
+  .resume-blurb-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+}
 </style>

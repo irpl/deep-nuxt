@@ -1,1 +1,6 @@
-Innovative programmer and maker striving to create useful new tools and solutions in Web and IoT. A logical and technical thinker, adept in software development and embedded development.
+Procient in a wide range of programming languages and frameworks including Java (Spring Boot, Firebase), Python
+(Django, Flask, FastAPI), and JavaScript/TypeScript (Vue.js, React, Node.js). Experienced with SQL and NoSQL
+databases such as PostgreSQL, OracleDB, and Firebase Firestore. Skilled in DevOps and cloud tools including Docker,
+Kubernetes, Linux system administration, CI/CD pipelines, and monitoring solutions. Knowledgeable in embedded and
+IoT development with AVR C, Arduino, and ESP32 platforms. Comfortable working across full-stack environments and
+integrating APIs, WebSockets, and microservices.
