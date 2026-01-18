@@ -6,7 +6,8 @@
     <div class="resume-exp-table-body">
       <span class="resume-exp-table-position"> - {{ position }}</span>
       <!-- <span class="">{{ duration }}</span> -->
-      <div class="">{{ where + " | " + duration }}</div>
+      <div v-if="where || duration" class="">{{ where + " | " + duration }}</div>
+      <!-- <div class="">{{ where + " | " + duration }}</div> -->
       <nuxt-content class="" :document="body" />
     </div>
   </div>
