@@ -2,6 +2,7 @@
 position: Back-end Software Developer
 where: CTX Technology Limited
 duration: 2021 - 2025
+type: dev
 ---
 
 - Work with a group of professional peers that provides small scale coding & engineering solutions.

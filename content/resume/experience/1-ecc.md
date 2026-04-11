@@ -2,6 +2,7 @@
 position: Lecturer
 where: Excelsior Community College
 duration: Sept 2025 - Present
+type: teacher
 ---
 
 - I teach Introduction to Programming, Web Development, and Fundamentals of IT.

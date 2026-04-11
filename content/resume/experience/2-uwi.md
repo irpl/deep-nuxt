@@ -1,7 +1,8 @@
 ---
-position: Adjuct Assistant Lecturer
+position: Adjuct Lecturer
 where: University of the West Indies, Mona
-duration: 2018 - 2023
+duration: 2018 - Present
+type: teacher
 ---
 
 - Lecture second and final year students in IoT (Internet of Things) and web development in the Facutly of Engineering.

@@ -101,4 +101,34 @@ a {
 .doop-body {
   margin-top: 0.5em;
 }
+
+.print {
+  display: unset;
+}
+
+@media print {
+  body {
+    /* font-family: serif;  */
+    font-size: 10pt;
+    color: black;
+  }
+  /* Hide elements not needed in print */
+  .no-print {
+    display: none;
+  }
+  .resume-banner {
+    flex-direction: column;
+  }
+  .resume-blurb-table {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* width: 500px; */
+  }
+  /* Adjust margins for printing */
+  @page {
+    margin: 0;
+  }
+}
 </style>

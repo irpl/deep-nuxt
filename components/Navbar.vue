@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar no-print">
     <div class="content-wrapper">
       <router-link to="/">
         <div class="logo">
