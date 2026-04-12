@@ -1,9 +1,9 @@
 ---
-position: Adjuct Lecturer
+position: Adjunct Lecturer
 where: University of the West Indies, Mona
 duration: 2018 - Present
 type: teacher
 ---
 
-- Lecture second and final year students in IoT (Internet of Things) and web development in the Facutly of Engineering.
-- Lecture 6th form students in digital and embedded electronics for the Physics Department outreach programme.
+- Deliver lectures on IoT (Internet of Things) and web development to second and final year students in the Faculty of Engineering.
+- Teach digital and embedded electronics to 6th form students through the Physics Department outreach programme.

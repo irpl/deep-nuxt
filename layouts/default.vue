@@ -117,14 +117,13 @@ a {
     display: none;
   }
   .resume-banner {
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
   }
   .resume-blurb-table {
-    margin-top: 15px;
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    /* width: 500px; */
+    gap: 16px;
+    font-size: 9pt;
   }
   /* Adjust margins for printing */
   @page {

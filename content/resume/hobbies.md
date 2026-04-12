@@ -1,4 +1,4 @@
-- Lots and lots of Youtube and Twitch
+- Watching tech, gaming, and engineering content (YouTube, Twitch)
 - Teaching Mathematics, Physics, Electronics, and Programming
 - Badminton
 - Running

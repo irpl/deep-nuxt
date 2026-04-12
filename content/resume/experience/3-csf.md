@@ -5,5 +5,5 @@ duration: 2022 - Present
 type: teacher
 ---
 
-- Online instructor for introductory web development, delivering engaging sessions on HTML and CSS, with occasional JavaScript insights. Welcoming students of all ages from diverse backgrounds.
-- Facilitates a dynamic virtual learning environment, ensuring accessibility to technical concepts and fostering a positive experience for online web development beginners.
+- Deliver online introductory web development sessions covering HTML, CSS, and JavaScript to students of all ages and backgrounds.
+- Facilitate a dynamic virtual learning environment, making technical concepts accessible to beginners.

@@ -39,12 +39,17 @@
             </button>
           </div>
 
-          <h2><font-awesome-icon icon="fa-solid fa-user" />Profile</h2>
-          <div v-if="blurb" class="">
+          <h2><font-awesome-icon icon="fa-solid fa-user" /> Profile</h2>
+          <div v-if="blurb">
             <nuxt-content :document="blurb" />
           </div>
 
-          <h2><font-awesome-icon icon="fa-solid fa-briefcase" />Experience</h2>
+          <h2><font-awesome-icon icon="fa-solid fa-code" /> Skills</h2>
+          <div v-if="skills" class="skills-section">
+            <nuxt-content :document="skills" />
+          </div>
+
+          <h2><font-awesome-icon icon="fa-solid fa-briefcase" /> Experience</h2>
           <div v-for="(exp, index) in filteredExperience" :key="'exp-' + index">
             <ResumeBlock
               :duration="exp.duration"
@@ -90,11 +95,13 @@ export default {
   async asyncData({ $content }) {
     const experience = await $content("resume/experience").fetch();
     const blurb = await $content("resume/blurb").fetch();
+    const skills = await $content("resume/skills").fetch();
     const edu = await $content("resume/education").fetch();
     const hobbies = await $content("resume/hobbies").fetch();
     return {
       experience,
       blurb,
+      skills,
       edu,
       hobbies
     };
@@ -102,7 +109,9 @@ export default {
   computed: {
     filteredExperience() {
       if (this.selectedView === "full") {
-        return this.experience;
+        return this.experience.filter(
+          (exp) => exp.type !== "archive"
+        );
       }
       return this.experience.filter(
         (exp) => exp.type === this.selectedView
@@ -123,17 +132,45 @@ export default {
   margin: 0 auto;
   width: 90%;
 }
+.resume-container h2 {
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1.5px solid #333;
+  padding-bottom: 4px;
+  margin-top: 16px;
+  margin-bottom: 10px;
+}
+.resume-container h2 svg {
+  margin-right: 6px;
+  font-size: 14px;
+}
 .bottom-block {
   display: flex;
-  margin-top: 24px;
+  gap: 24px;
 }
 .bottom-block-item {
   width: 50%;
 }
+.resume-container p {
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.skills-section {
+  columns: 2;
+  column-gap: 24px;
+}
+.skills-section p {
+  margin-bottom: 0.2em;
+  font-size: 13px;
+  break-inside: avoid;
+}
 .view-switcher {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .view-btn {
   padding: 6px 16px;
@@ -159,9 +196,12 @@ export default {
   }
   .resume-blurb-table {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 1.5rem;
+    gap: 16px;
+    font-size: 9pt;
+  }
+  .resume-container h2 {
+    margin-top: 12px;
+    margin-bottom: 6px;
   }
 }
 </style>

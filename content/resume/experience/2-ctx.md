@@ -5,5 +5,6 @@ duration: 2021 - 2025
 type: dev
 ---
 
-- Work with a group of professional peers that provides small scale coding & engineering solutions.
-- Develop back-end services and apps in the Django Python framework.
+- Developed web applications and REST APIs for clients using the Django Python framework.
+- Delivered end-to-end backend solutions including database design, API integrations, and deployment.
+- Worked within a small engineering team to scope, build, and ship client projects on tight timelines.
