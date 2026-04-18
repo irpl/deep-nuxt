@@ -7,7 +7,6 @@
 
             <div>
               <h1>Phillip Logan</h1>
-              <!-- <span>Software Developer</span> -->
             </div>
 
             <div class="resume-blurb-table">
@@ -132,6 +131,17 @@ export default {
   margin: 0 auto;
   width: 90%;
 }
+.resume-banner {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.resume-banner h1 {
+  margin-bottom: 0;
+}
+.resume-blurb-table-item {
+  margin-bottom: 10px;
+}
 .resume-container h2 {
   font-weight: 600;
   font-size: 16px;
@@ -190,6 +200,10 @@ export default {
 @media print {
   .view-switcher {
     display: none;
+  }
+  .resume-banner {
+    flex-direction: row;
+    align-items: center;
   }
   .resume-blurb-table-item {
     width: unset;

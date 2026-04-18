@@ -1,40 +1,51 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
   target: "static",
   server: {
     host: "0.0.0.0",
-    port: 3001 // default: 3000
+    port: 3001
   },
-  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "me",
+    title: "Phillip Logan — Software Developer & Educator",
     htmlAttrs: {
       lang: "en"
     },
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" }
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Personal site of Phillip Logan — software developer, IoT enthusiast, and educator based in Jamaica."
+      },
+      { name: "format-detection", content: "telephone=no" },
+      {
+        hid: "og:title",
+        property: "og:title",
+        content: "Phillip Logan — Software Developer & Educator"
+      },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content:
+          "Personal site of Phillip Logan — software developer, IoT enthusiast, and educator based in Jamaica."
+      },
+      { hid: "og:type", property: "og:type", content: "website" },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: "https://philliplogan.com"
+      },
+      { hid: "twitter:card", name: "twitter:card", content: "summary" }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@fortawesome/fontawesome-svg-core/styles.css"],
 
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: ["~/plugins/fontawesome.js"],
 
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
-
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxt/content"],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  modules: ["@nuxt/content"]
 };

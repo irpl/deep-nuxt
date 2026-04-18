@@ -12,9 +12,6 @@ export default {};
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 html {
-  /* font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", */
-  /* Roboto, "Helvetica Neue", Arial, sans-serif; */
-  /* font-family: Roboto, Helvetica Neue, Helvetica, Arial, sans-serif; */
   font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
@@ -70,7 +67,6 @@ p {
 .deep {
   padding: 20px 0;
   margin-bottom: 10px;
-  /* max-width: 630px; */
 }
 .doop {
   background-color: white;
@@ -102,30 +98,14 @@ a {
   margin-top: 0.5em;
 }
 
-.print {
-  display: unset;
-}
-
 @media print {
   body {
-    /* font-family: serif;  */
     font-size: 10pt;
     color: black;
   }
-  /* Hide elements not needed in print */
   .no-print {
     display: none;
   }
-  .resume-banner {
-    flex-direction: row;
-    align-items: center;
-  }
-  .resume-blurb-table {
-    display: flex;
-    gap: 16px;
-    font-size: 9pt;
-  }
-  /* Adjust margins for printing */
   @page {
     margin: 0;
   }

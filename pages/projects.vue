@@ -19,8 +19,7 @@
 </template>
 <script>
 export default {
-  // props: ["projects"]
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const projects = await $content("projects").fetch();
     return {
       projects

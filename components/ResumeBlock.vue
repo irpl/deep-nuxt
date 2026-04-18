@@ -3,7 +3,7 @@
     <div class="resume-exp-table-body">
       <span class="resume-exp-table-position">{{ position }}</span>
       <div v-if="where || duration" class="resume-exp-table-subtitle">{{ where + " | " + duration }}</div>
-      <nuxt-content class="" :document="body" />
+      <nuxt-content :document="body" />
     </div>
   </div>
 </template>
@@ -14,17 +14,6 @@ export default {
 };
 </script>
 <style>
-.resume-banner {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-.resume-banner h1 {
-  margin-bottom: 0;
-}
-.resume-blurb-table-item {
-  margin-bottom: 10px;
-}
 .resume-exp-table {
   margin-bottom: 16px;
 }

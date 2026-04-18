@@ -23,7 +23,7 @@
 
       <div class="deep">
         <h1>School</h1>
-        <div>That^</div>
+        <span>Where I studied</span>
       </div>
 
       <div>
@@ -55,20 +55,13 @@
 
 <script>
 export default {
-  async asyncData({ $content, params }) {
+  async asyncData({ $content }) {
     const about = await $content("about").fetch();
     const works = await $content("work").fetch();
     return {
       about,
       works
     };
-  },
-  methods: {
-    mark(md) {
-      return md ? marked(md) : "";
-    }
   }
 };
 </script>
-
-<style></style>
