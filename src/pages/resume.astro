@@ -15,7 +15,12 @@ const { Content: EduContent } = eduEntry ? await render(eduEntry) : { Content: n
 const { Content: HobbiesContent } = hobbiesEntry ? await render(hobbiesEntry) : { Content: null };
 
 const experiences = await getCollection("experience", (e) => e.data.type !== "archive");
-experiences.sort((a, b) => a.id.localeCompare(b.id));
+experiences.sort((a, b) => {
+  const aEnd = a.data.end ?? "9999-99";
+  const bEnd = b.data.end ?? "9999-99";
+  if (aEnd !== bEnd) return bEnd.localeCompare(aEnd);
+  return b.data.start.localeCompare(a.data.start);
+});
 
 const experienceEntries = await Promise.all(
   experiences.map(async (e) => {

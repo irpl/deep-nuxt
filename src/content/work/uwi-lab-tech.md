@@ -2,6 +2,8 @@
 position: Senior Lab Tech
 duration: Late 2017 - Late 2018
 where: Univerity of the West Indies - Physics Dept
+start: "2017-10"
+end: "2018-10"
 ---
 
 Primary function is to manage the computer lab. This includes maintaining all computers, ensuring the necessary software and hardware is available to students, coordinating tutorial and lab sessions and lecturing staff and providing assistance to students and lectures during lectures, tutorial and lab sessions.

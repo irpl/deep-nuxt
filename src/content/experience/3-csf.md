@@ -3,6 +3,7 @@ position: Instructor
 where: Caribbean Science Foundation
 duration: 2022 - Present
 type: teacher
+start: "2022-06"
 ---
 
 - Deliver online introductory web development sessions covering HTML, CSS, and JavaScript to students of all ages and backgrounds.

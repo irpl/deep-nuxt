@@ -3,6 +3,8 @@ position: Operations Engineer
 where: Digicel Group
 duration: Jan 2019 - Apr 2023
 type: dev
+start: "2019-01"
+end: "2023-04"
 ---
 
 - Maintained back-end systems and services supporting company-wide operations.

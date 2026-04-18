@@ -6,6 +6,12 @@ const aboutEntry = await getEntry("pages", "about");
 const { Content: AboutContent } = aboutEntry ? await render(aboutEntry) : { Content: null };
 
 const works = await getCollection("work");
+works.sort((a, b) => {
+  const aEnd = a.data.end ?? "9999-99";
+  const bEnd = b.data.end ?? "9999-99";
+  if (aEnd !== bEnd) return bEnd.localeCompare(aEnd);
+  return b.data.start.localeCompare(a.data.start);
+});
 
 const schools = [
   {

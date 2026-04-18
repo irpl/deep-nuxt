@@ -3,6 +3,8 @@ position: Back-end Software Developer
 where: CTX Technology Limited
 duration: 2021 - 2025
 type: dev
+start: "2021-01"
+end: "2025-06"
 ---
 
 - Developed web applications and REST APIs for clients using the Django Python framework.

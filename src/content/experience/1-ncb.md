@@ -3,6 +3,8 @@ position: Developer/Analyst
 where: NCB Jamaica Ltd.
 duration: May 2023 - Jun 2025
 type: dev
+start: "2023-05"
+end: "2025-06"
 ---
 
 - Built and maintained applications serving both external bank customers and internal employees.
