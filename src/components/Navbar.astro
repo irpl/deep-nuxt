@@ -1,0 +1,82 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+const path = Astro.url.pathname;
+const isActive = (p: string) =>
+  p === "/" ? path === "/" : path.startsWith(p);
+---
+
+<header class="navbar no-print">
+  <div class="content-wrapper">
+    <a href="/">
+      <div class="logo">
+        <div class="nav-title">phillip logan</div>
+        <div class="nav-subtitle">maker &amp; teacher</div>
+      </div>
+    </a>
+    <div class="navs">
+      <a href="/">
+        <div class:list={["nav-btn", { active: isActive("/") }]}>about</div>
+      </a>
+      <a href="/projects">
+        <div class:list={["nav-btn", { active: isActive("/projects") }]}>
+          projects
+        </div>
+      </a>
+      <ThemeToggle />
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    padding: 1rem 0;
+    max-width: 630px;
+    margin: 0 auto;
+  }
+  .navs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-btn {
+    margin-left: 1.5rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .nav-btn {
+      margin-left: 0.5rem;
+    }
+  }
+  .active {
+    background-color: var(--accent);
+    color: var(--bg);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+  }
+  .nav-title {
+    display: block;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--fg);
+    letter-spacing: 1px;
+  }
+  .nav-subtitle {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--muted);
+    word-spacing: 5px;
+  }
+  .content-wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .content-wrapper {
+      display: block;
+    }
+  }
+</style>

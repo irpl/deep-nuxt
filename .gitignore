@@ -68,7 +68,10 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# Nuxt generate
+# Astro type cache
+.astro
+
+# Build output (Nuxt generate / Astro build)
 dist
 
 # vuepress build output

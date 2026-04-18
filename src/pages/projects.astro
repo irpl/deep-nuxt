@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const projects = await getCollection("projects");
+
+const projectEntries = await Promise.all(
+  projects.map(async (p) => {
+    const { Content } = await render(p);
+    return { ...p.data, Content };
+  })
+);
+---
+
+<Layout title="Projects — Phillip Logan">
+  <main>
+    <section class="container">
+      <div class="deep">
+        <h1>Projects</h1>
+        <span>Stuff I made and stuff I helped to make.</span>
+      </div>
+      {projectEntries.map((project) => (
+        <div class="doop">
+          <div class="doop-top">
+            <span class="doop-title">{project.title}</span>
+            <a href={`https://${project.link}`}>{project.link}</a>
+          </div>
+          <div class="doop-body">
+            <project.Content />
+          </div>
+        </div>
+      ))}
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,79 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+const aboutEntry = await getEntry("pages", "about");
+const { Content: AboutContent } = aboutEntry ? await render(aboutEntry) : { Content: null };
+
+const works = await getCollection("work");
+
+const schools = [
+  {
+    title: "University of the West Indies, Mona",
+    duration: "2012 - 2017",
+    body: "Computer Systems Engineering"
+  },
+  {
+    title: "The Wolmer's Trust High School for Boys",
+    duration: "2011 - 2012"
+  },
+  {
+    title: "St. George's College",
+    duration: "2005 - 2011"
+  }
+];
+
+const workEntries = await Promise.all(
+  works.map(async (w) => {
+    const { Content } = await render(w);
+    return { ...w.data, Content };
+  })
+);
+---
+
+<Layout>
+  <main>
+    <section class="container">
+      {AboutContent && (
+        <div class="deep">
+          <AboutContent />
+        </div>
+      )}
+
+      <div class="deep">
+        <h1>Work</h1>
+        <span>Where I've worked</span>
+      </div>
+
+      {workEntries.map((work) => (
+        <div class="doop">
+          <div class="doop-top">
+            <span class="doop-title">{work.position}</span>
+            <span class="doop-duration">{work.duration}</span>
+          </div>
+          <div class="doop-where">{work.where}</div>
+          <div class="doop-body">
+            <work.Content />
+          </div>
+        </div>
+      ))}
+
+      <div class="deep">
+        <h1>School</h1>
+        <span>Where I studied</span>
+      </div>
+
+      <div>
+        {schools.map((school) => (
+          <div class="doop">
+            <div class="doop-top">
+              <span class="doop-title">{school.title}</span>
+              <span class="doop-duration">{school.duration}</span>
+            </div>
+            {school.body && <div class="doop-body">{school.body}</div>}
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+</Layout>
