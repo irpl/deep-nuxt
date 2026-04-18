@@ -3,83 +3,167 @@ import { getCollection, getEntry, render } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 const aboutEntry = await getEntry("pages", "about");
-const { Content: AboutContent } = aboutEntry ? await render(aboutEntry) : { Content: null };
+const { Content: AboutContent } = aboutEntry
+  ? await render(aboutEntry)
+  : { Content: null };
 
 const works = await getCollection("work");
-works.sort((a, b) => {
-  const aEnd = a.data.end ?? "9999-99";
-  const bEnd = b.data.end ?? "9999-99";
-  if (aEnd !== bEnd) return bEnd.localeCompare(aEnd);
-  return b.data.start.localeCompare(a.data.start);
-});
 
-const schools = [
-  {
-    title: "University of the West Indies, Mona",
-    duration: "2012 - 2017",
-    body: "Computer Systems Engineering"
-  },
-  {
-    title: "The Wolmer's Trust High School for Boys",
-    duration: "2011 - 2012"
-  },
-  {
-    title: "St. George's College",
-    duration: "2005 - 2011"
-  }
-];
+const active = works
+  .filter((w) => !w.data.end)
+  .sort((a, b) => b.data.start.localeCompare(a.data.start));
 
-const workEntries = await Promise.all(
-  works.map(async (w) => {
-    const { Content } = await render(w);
-    return { ...w.data, Content };
-  })
-);
+const past = works
+  .filter((w) => w.data.end)
+  .sort((a, b) => {
+    const aEnd = a.data.end ?? "";
+    const bEnd = b.data.end ?? "";
+    return bEnd.localeCompare(aEnd);
+  });
+
+const render2 = async (entries: typeof works) =>
+  Promise.all(
+    entries.map(async (w) => {
+      const { Content } = await render(w);
+      return { ...w.data, Content, id: w.id };
+    })
+  );
+
+const activeEntries = await render2(active);
+const pastEntries = await render2(past);
 ---
 
 <Layout>
   <main>
     <section class="container">
       {AboutContent && (
-        <div class="deep">
+        <div class="about">
           <AboutContent />
         </div>
       )}
 
-      <div class="deep">
-        <h1>Work</h1>
-        <span>Where I've worked</span>
-      </div>
-
-      {workEntries.map((work) => (
-        <div class="doop">
-          <div class="doop-top">
-            <span class="doop-title">{work.position}</span>
-            <span class="doop-duration">{work.duration}</span>
+      {activeEntries.length > 0 && (
+        <>
+          <h2 class="section-label">Now</h2>
+          <div class="timeline">
+            {activeEntries.map((w) => (
+              <div class="timeline-row">
+                <div class="timeline-date">
+                  <span class="timeline-dot" aria-hidden="true"></span>
+                  {w.duration}
+                </div>
+                <div class="timeline-details">
+                  <div class="timeline-position">{w.position}</div>
+                  <div class="timeline-where">{w.where}</div>
+                  <div class="timeline-body">
+                    <w.Content />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-          <div class="doop-where">{work.where}</div>
-          <div class="doop-body">
-            <work.Content />
-          </div>
-        </div>
-      ))}
+        </>
+      )}
 
-      <div class="deep">
-        <h1>School</h1>
-        <span>Where I studied</span>
-      </div>
-
-      <div>
-        {schools.map((school) => (
-          <div class="doop">
-            <div class="doop-top">
-              <span class="doop-title">{school.title}</span>
-              <span class="doop-duration">{school.duration}</span>
-            </div>
-            {school.body && <div class="doop-body">{school.body}</div>}
+      {pastEntries.length > 0 && (
+        <>
+          <h2 class="section-label">Previously</h2>
+          <div class="timeline">
+            {pastEntries.map((w) => (
+              <div class="timeline-row">
+                <div class="timeline-date">{w.duration}</div>
+                <div class="timeline-details">
+                  <div class="timeline-position">{w.position}</div>
+                  <div class="timeline-where">{w.where}</div>
+                  <div class="timeline-body">
+                    <w.Content />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
     </section>
   </main>
 </Layout>
+
+<style>
+  .about {
+    padding: 30px 0 10px;
+  }
+  .about :global(p) {
+    margin-bottom: 0.5em;
+  }
+  .section-label {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 4px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .timeline-date {
+    font-size: 12px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    padding-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .timeline-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--accent);
+  }
+  .timeline-position {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--fg);
+    line-height: 1.3;
+  }
+  .timeline-where {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .timeline-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--fg);
+  }
+  .timeline-body :global(p) {
+    margin-bottom: 0.4em;
+  }
+  .timeline-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .timeline-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .timeline-date {
+      padding-top: 0;
+    }
+  }
+</style>
