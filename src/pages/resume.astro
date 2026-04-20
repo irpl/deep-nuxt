@@ -250,6 +250,13 @@ const views = ["dev", "teacher", "full"] as const;
       margin-top: 12px;
       margin-bottom: 6px;
       border-bottom-color: black;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+    .exp-wrapper,
+    .bottom-block-item {
+      break-inside: avoid;
+      page-break-inside: avoid;
     }
   }
 </style>
