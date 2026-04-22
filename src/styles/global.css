@@ -93,6 +93,6 @@ p {
     display: none !important;
   }
   @page {
-    margin: 0.5in;
+    margin: 0.3in 0.5in;
   }
 }
