@@ -1,7 +1,7 @@
 ---
 title: sketchiiiful
 link: srhoden.com
-order: 5
+order: 6
 ---
 
 A portfolio website for a storyboard artist.
