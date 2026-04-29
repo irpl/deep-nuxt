@@ -28,7 +28,7 @@ const experience = defineCollection({
     position: z.string(),
     where: z.string().optional(),
     duration: z.union([z.string(), z.number()]).optional(),
-    type: z.enum(["dev", "teacher", "archive"]),
+    types: z.array(z.enum(["dev", "qa", "teacher"])),
     start: dateString,
     end: dateString.optional()
   })

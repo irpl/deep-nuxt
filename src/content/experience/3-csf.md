@@ -2,7 +2,7 @@
 position: Instructor
 where: Caribbean Science Foundation
 duration: 2022 - Present
-type: teacher
+types: [teacher]
 start: "2022-06"
 ---
 

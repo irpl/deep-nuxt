@@ -1,13 +1,13 @@
 ---
-position: Automation Engineer Intern
+position: QA Intern
 where: MC Systems (JN Group)
 duration: 2015
-type: archive
+types: [qa]
 start: "2015-01"
 end: "2015-12"
 ---
 
-- Developed automated test cases in C# using industry-standard testing frameworks.
-- Built Python automation scripts with Selenium to navigate web portals, download reports, parse data, and trigger database updates.
-- Created utilities in Python to streamline repetitive operational tasks and improve team efficiency.
-- Gained experience with Puppeteer for JavaScript-based browser automation, including DOM interaction and headless workflow testing.
+- Dedicated QA internship within the JN Group's technology ecosystem, focused on test automation.
+- Automated provided test cases in C# using industry-standard testing frameworks and produced execution reports.
+- Designed original test cases through independent analysis of the application under test.
+- Built Python automation scripts with Selenium to navigate web portals, parse data, and trigger database updates.

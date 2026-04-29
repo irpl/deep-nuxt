@@ -2,7 +2,7 @@
 position: Operations Engineer
 where: Digicel Group
 duration: Jan 2019 - Apr 2023
-type: dev
+types: [dev]
 start: "2019-01"
 end: "2023-04"
 ---

@@ -1,9 +1,11 @@
 **Languages:** Java, Python, JavaScript/TypeScript, AVR C, C#
 
-**Frameworks:** Spring Boot, Django, Flask, FastAPI, Vue.js, React, Node.js
+**Frameworks:** Spring Boot, Django, Flask, FastAPI, ASP.NET, Vue.js, React, Node.js
 
-**Databases:** PostgreSQL, OracleDB, Firebase Firestore
+**Databases:** PostgreSQL, OracleDB, SQL Server, Firebase Firestore
 
 **DevOps:** Docker, Kubernetes, Linux, CI/CD Pipelines
 
-**Other:** IoT (Arduino, ESP32), Selenium, Puppeteer, WebSockets, Microservices
+**QA & Testing:** Selenium, Postman with Chai assertions; familiar with Cypress and Playwright
+
+**Other:** IoT (Arduino, ESP32), WebSockets, Microservices, Jira, Agile/Scrum

@@ -1,12 +1,13 @@
 ---
-position: Developer/Analyst
+position: Software Engineer
 where: NCB Jamaica Ltd.
 duration: May 2023 - Jun 2025
-type: dev
+types: [dev, qa]
 start: "2023-05"
 end: "2025-06"
 ---
 
-- Built and maintained applications serving both external bank customers and internal employees.
-- Deployed applications across development and UAT environments using automated CI/CD build and deploy pipelines.
-- Managed containerised applications to ensure seamless deployment and scalability within a banking environment.
+- Built and maintained customer- and internal-facing banking applications under strict data integrity, security, and compliance requirements.
+- Designed and built Selenium automation that resolved daily mobile top-up transaction failures end-to-end — scraping vendor portals, querying internal databases, and disbursing funds — eliminating a recurring manual morning task for the team.
+- Shipped via automated CI/CD pipelines across development and UAT, managing containerised deployments with Docker and Kubernetes.
+- Worked in an Agile/Scrum workflow alongside backend, QA, and product teams.

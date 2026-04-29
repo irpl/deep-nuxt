@@ -11,10 +11,9 @@ const hobbiesEntry = await getEntry("pages", "hobbies");
 
 const { Content: BlurbContent } = blurbEntry ? await render(blurbEntry) : { Content: null };
 const { Content: SkillsContent } = skillsEntry ? await render(skillsEntry) : { Content: null };
-const { Content: EduContent } = eduEntry ? await render(eduEntry) : { Content: null };
 const { Content: HobbiesContent } = hobbiesEntry ? await render(hobbiesEntry) : { Content: null };
 
-const experiences = await getCollection("experience", (e) => e.data.type !== "archive");
+const experiences = await getCollection("experience");
 experiences.sort((a, b) => {
   const aEnd = a.data.end ?? "9999-99";
   const bEnd = b.data.end ?? "9999-99";
@@ -29,7 +28,7 @@ const experienceEntries = await Promise.all(
   })
 );
 
-const views = ["dev", "teacher", "full"] as const;
+const views = ["dev", "qa", "teacher", "full"] as const;
 ---
 
 <Layout title="Resume — Phillip Logan">
@@ -63,7 +62,7 @@ const views = ["dev", "teacher", "full"] as const;
                 type="button"
                 aria-label={`Show ${v} view`}
               >
-                {v}
+                {v === "qa" ? "QA" : v}
               </button>
             ))}
           </div>
@@ -84,7 +83,7 @@ const views = ["dev", "teacher", "full"] as const;
 
           <h2><Icon name="fa6-solid:briefcase" /> Experience</h2>
           {experienceEntries.map((exp) => (
-            <div class="exp-wrapper" data-type={exp.type}>
+            <div class="exp-wrapper" data-types={exp.types.join(" ")}>
               <ResumeBlock
                 position={exp.position}
                 where={exp.where}
@@ -95,27 +94,22 @@ const views = ["dev", "teacher", "full"] as const;
             </div>
           ))}
 
-          <div class="bottom-block">
-            <div class="bottom-block-item">
-              <h2><Icon name="fa6-solid:school" /> Education</h2>
-              {eduEntry && (
-                <ResumeBlock
-                  position={eduEntry.data.position ?? ""}
-                  where={eduEntry.data.where}
-                  duration={eduEntry.data.duration}
-                >
-                  {EduContent && <EduContent />}
-                </ResumeBlock>
-              )}
+          <h2><Icon name="fa6-solid:school" /> Education</h2>
+          {eduEntry && (
+            <div class="education-line">
+              {eduEntry.data.position}
+              {eduEntry.data.where && <> &mdash; {eduEntry.data.where}</>}
+              {eduEntry.data.duration && <> &mdash; {eduEntry.data.duration}</>}
             </div>
-            <div class="bottom-block-item">
-              <h2><Icon name="fa6-solid:puzzle-piece" /> Hobbies</h2>
-              {HobbiesContent && (
-                <div>
-                  <HobbiesContent />
-                </div>
-              )}
-            </div>
+          )}
+
+          <div data-show-on="full">
+            <h2><Icon name="fa6-solid:puzzle-piece" /> Hobbies</h2>
+            {HobbiesContent && (
+              <div>
+                <HobbiesContent />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -132,9 +126,13 @@ const views = ["dev", "teacher", "full"] as const;
       btn.classList.toggle("view-btn-active", btn.dataset.view === view);
     });
     document.querySelectorAll<HTMLElement>(".exp-wrapper").forEach((el) => {
-      const type = el.dataset.type;
-      const visible = view === "full" || type === view;
+      const types = (el.dataset.types || "").split(" ").filter(Boolean);
+      const visible = view === "full" || types.includes(view);
       el.style.display = visible ? "" : "none";
+    });
+    document.querySelectorAll<HTMLElement>("[data-show-on]").forEach((el) => {
+      const allowed = (el.dataset.showOn || "").split(" ").filter(Boolean);
+      el.style.display = allowed.includes(view) ? "" : "none";
     });
   }
 
@@ -200,12 +198,10 @@ const views = ["dev", "teacher", "full"] as const;
     font-size: 13px;
     break-inside: avoid;
   }
-  .bottom-block {
-    display: flex;
-    gap: 24px;
-  }
-  .bottom-block-item {
-    width: 50%;
+  .education-line {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 4px;
   }
   .view-switcher {
     display: flex;
@@ -257,8 +253,7 @@ const views = ["dev", "teacher", "full"] as const;
       break-after: avoid;
       page-break-after: avoid;
     }
-    .exp-wrapper,
-    .bottom-block-item {
+    .exp-wrapper {
       break-inside: avoid;
       page-break-inside: avoid;
     }
