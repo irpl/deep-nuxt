@@ -76,18 +76,19 @@ const views = ["dev", "qa", "teacher", "full"] as const;
               <BlurbContent />
             </div>
           )}
-          {eduEntry && (
-            <div class="education-inline" data-show-on="dev qa teacher">
-              {eduEntry.data.position}
-              {eduEntry.data.where && <> &mdash; {eduEntry.data.where}</>}
-              {eduEntry.data.duration && <> &mdash; {eduEntry.data.duration}</>}
-            </div>
-          )}
-
           <h2><Icon name="fa6-solid:code" /> Skills</h2>
           {SkillsContent && (
             <div class="skills-section">
               <SkillsContent />
+            </div>
+          )}
+
+          <h2><Icon name="fa6-solid:school" /> Education</h2>
+          {eduEntry && (
+            <div class="education-line">
+              {eduEntry.data.position}
+              {eduEntry.data.where && <> &mdash; {eduEntry.data.where}</>}
+              {eduEntry.data.duration && <> &mdash; {eduEntry.data.duration}</>}
             </div>
           )}
 
@@ -103,17 +104,6 @@ const views = ["dev", "qa", "teacher", "full"] as const;
               </ResumeBlock>
             </div>
           ))}
-
-          <div data-show-on="full">
-            <h2><Icon name="fa6-solid:school" /> Education</h2>
-            {eduEntry && (
-              <div class="education-line">
-                {eduEntry.data.position}
-                {eduEntry.data.where && <> &mdash; {eduEntry.data.where}</>}
-                {eduEntry.data.duration && <> &mdash; {eduEntry.data.duration}</>}
-              </div>
-            )}
-          </div>
 
           <div data-show-on="full">
             <h2><Icon name="fa6-solid:puzzle-piece" /> Hobbies</h2>
@@ -215,11 +205,6 @@ const views = ["dev", "qa", "teacher", "full"] as const;
     line-height: 1.5;
     margin-bottom: 4px;
   }
-  .education-inline {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 4px;
-  }
   .view-switcher {
     display: flex;
     gap: 8px;
@@ -275,8 +260,7 @@ const views = ["dev", "qa", "teacher", "full"] as const;
       page-break-inside: avoid;
     }
     .resume-container :global(p),
-    .education-line,
-    .education-inline {
+    .education-line {
       font-size: 13px;
       line-height: 1.35;
     }
