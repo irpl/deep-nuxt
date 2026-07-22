@@ -7,6 +7,7 @@ start: "2019-01"
 end: "2023-04"
 ---
 
-- Maintained back-end systems and services supporting company-wide operations.
-- Coordinated with internal and external developers to deliver releases and bug fixes for internal and customer-facing applications.
-- Supported regional infrastructure upgrades and troubleshooting across markets in the Caribbean and Latin America.
+- Operated the Java microservice middleware behind the MyDigicel self-care app; primarily responsible for the balance service (account balances shown to every app user) and the network service bridging the middleware to internal and external APIs.
+- Coordinated synchronized major and minor releases with market engineers across 25+ Digicel markets in the Caribbean, Central America, and the Pacific.
+- Built the team's monitoring stack on Red Hat Linux: Telegraf agents parsing service logs into InfluxDB, Grafana dashboards for at-a-glance service health, and alerting to email, Telegram, and Teams for on-call response.
+- Wrote shell scripts automating recurring ops issues, from disk-space protection against runaway logs to generating log files for services Telegraf couldn't consume directly.

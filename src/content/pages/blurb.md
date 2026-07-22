@@ -1,4 +1,4 @@
-<p data-show-on="dev">Software engineer with experience building production applications in banking, designing automation workflows with Selenium, and shipping containerised services through CI/CD pipelines. Comfortable across the full stack — from embedded IoT devices to cloud-deployed web applications.</p>
+<p data-show-on="dev">Software engineer with 7+ years building production systems in banking and telecoms — Spring Boot and Django services on PostgreSQL, Python automation that removed manual payment-reconciliation work, and containerised deployments to Kubernetes through CI/CD.</p>
 
 <p data-show-on="qa">Software engineer with hands-on QA and automation experience across banking, academia, and a dedicated QA internship at JN Group. Comfortable building Selenium-based workflows, designing test cases, and validating APIs with Postman and Chai assertions.</p>
 

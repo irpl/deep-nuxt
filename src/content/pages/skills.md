@@ -1,10 +1,10 @@
-**Languages:** Java, Python, JavaScript/TypeScript, AVR C, C#
+**Languages:** Java, Python, JavaScript/TypeScript, C#, AVR C
 
-**Frameworks:** Spring Boot, Django, Flask, FastAPI, ASP.NET, Vue.js, React, Node.js
+**Frameworks:** Spring Boot, Django, Flask, FastAPI, ASP.NET, React/Next.js, Vue.js, Node.js, Strapi
 
-**Databases:** PostgreSQL, OracleDB, SQL Server, Firebase Firestore
+**Databases:** PostgreSQL (stored procedures & functions), OracleDB, SQL Server, Firebase Firestore
 
-**DevOps:** Docker, Kubernetes, Linux, CI/CD Pipelines
+**DevOps:** Docker, Kubernetes, Linux, GitLab CI, Octopus Deploy, Telegraf/InfluxDB/Grafana
 
 **QA & Testing:** Selenium, Postman with Chai assertions; familiar with Cypress and Playwright
 

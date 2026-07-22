@@ -7,7 +7,7 @@ start: "2023-05"
 end: "2025-06"
 ---
 
-- Built and maintained customer- and internal-facing banking applications under strict data integrity, security, and compliance requirements.
-- Designed and built Selenium automation that resolved daily mobile top-up transaction failures end-to-end — scraping vendor portals, querying internal databases, and disbursing funds — eliminating a recurring manual morning task for the team.
-- Shipped via automated CI/CD pipelines across development and UAT, managing containerised deployments with Docker and Kubernetes.
-- Worked in an Agile/Scrum workflow alongside backend, QA, and product teams.
+- Core developer (one of three) on the ground-up rebuild of the bank's corporate audit-reporting application — React/Next.js front end, Spring Boot (Java) back end, PostgreSQL with stored procedures and functions — replacing a slow, crash-prone legacy system that drew daily user complaints.
+- Acted as the team's liaison: coordinated integration requirements with internal NCB API owners and turned feedback from the audit team into implemented changes.
+- Built a Python/Selenium automation reconciling failed mobile top-ups (Digicel and Flow — dozens to hundreds daily): scraped vendor portals, matched transactions against internal records with SQL, and disbursed funds, cutting customer resolution from next-business-day or longer to a single script run.
+- Deployed to Kubernetes through GitLab CI and Octopus Deploy pipelines across development and UAT environments.

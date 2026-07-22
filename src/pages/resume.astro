@@ -260,5 +260,20 @@ const views = ["dev", "qa", "teacher", "full"] as const;
       break-inside: avoid;
       page-break-inside: avoid;
     }
+    .resume-container :global(p),
+    .education-line {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .resume-container :global(.resume-exp-table-content li) {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .resume-container :global(.resume-exp-table) {
+      margin-bottom: 10px;
+    }
+    .skills-section :global(p) {
+      font-size: 12px;
+    }
   }
 </style>
